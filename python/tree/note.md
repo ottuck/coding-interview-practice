@@ -37,3 +37,13 @@ fun fibo(n):
 1. 트리구조의 각 부위 명칭 기억하기
 2. 트리 순회: 전위, 중간, 후위 순회 기억하기
 3. BFS(큐 사용), DFS(재귀 구현) 코드 외우기!!
+
+"""
+def preorder(cur_node):
+    if cur_node is None:
+        return
+
+    print(cur_node.value) # 이 부분만 마지막으로 움기면 postorder 방식이 된다.
+    preorder(cur_node.left)
+    preorder(cur_node.right)
+"""

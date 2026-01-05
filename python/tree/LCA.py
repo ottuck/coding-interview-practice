@@ -26,3 +26,6 @@ def LCA(root, p, q):
     elif left and right:
         return root
     return left or right
+
+
+# 즉 위코드는 postorder 방식으로 트리를 순회하는 코드가 된다
