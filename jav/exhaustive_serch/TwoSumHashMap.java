@@ -4,7 +4,7 @@
 // input: {2, 7, 11, 15}
 // output: 9
 
-package jav.ps.pending;
+package jav.exhaustive_serch;
 
 import java.util.HashMap;
 import java.util.Map;

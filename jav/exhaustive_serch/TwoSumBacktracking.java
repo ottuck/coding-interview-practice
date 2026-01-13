@@ -1,4 +1,4 @@
-package jav.ps.pending;
+package jav.exhaustive_serch;
 
 import java.util.ArrayList;
 import java.util.List;

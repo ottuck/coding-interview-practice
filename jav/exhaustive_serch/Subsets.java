@@ -1,10 +1,10 @@
 // LeetCode 78 Seubsets
-package jav.ps.pending;
+package jav.exhaustive_serch;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(0, nums, new ArrayList<>(), result);
@@ -21,6 +21,15 @@ class Solution {
             backtrack(i + 1, nums, path, result);
             path.remove(path.size() - 1);
         }
+    }
+
+    public static void main(String[] args) {
+        Subsets subsets = new Subsets();
+
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> result = subsets.subsets(nums);
+
+        System.out.println(result);
     }
 }
 
