@@ -1,5 +1,5 @@
 // LeetCode 46 Permute
-package jav.exhaustive_serch;
+package javalang.exhaustiveserch;
 
 import java.util.ArrayList;
 import java.util.List;

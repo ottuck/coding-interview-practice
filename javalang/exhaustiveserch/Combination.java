@@ -1,5 +1,5 @@
 // LeetCode 77 Combination
-package jav.exhaustive_serch;
+package javalang.exhaustiveserch;
 
 import java.util.ArrayList;
 import java.util.List;

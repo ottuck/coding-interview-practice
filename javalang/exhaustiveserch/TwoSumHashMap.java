@@ -4,7 +4,7 @@
 // input: {2, 7, 11, 15}
 // output: 9
 
-package jav.exhaustive_serch;
+package javalang.exhaustiveserch;
 
 import java.util.HashMap;
 import java.util.Map;

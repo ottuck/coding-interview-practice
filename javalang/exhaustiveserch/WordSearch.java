@@ -1,5 +1,5 @@
 // LeetCode 79 WordSearch
-package jav.exhaustive_serch;
+package javalang.exhaustiveserch;
 
 public class WordSearch {
 
