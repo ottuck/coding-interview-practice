@@ -55,3 +55,15 @@ public class Dfs {
         dfs.solution(graph);
     }
 }
+
+/**
+// BFS, DFS 의 공통 골격
+
+visited[cur] = true;
+
+for (int next : graph.get(cur)) {
+    if (!visited[next]) {
+        // 다음 노드로 이동
+    }
+}
+ */

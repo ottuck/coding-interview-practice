@@ -24,7 +24,6 @@ a.contains(4);  // O(N)
 a.remove(Integer.valueOf(10));  // O(N)
 """
 
-
 # Linked List
 정의: Node가 Pointer(참조)를 통해 연결되ㅇ, 논리적인 순서로 형성된 자료구조
 
@@ -37,6 +36,11 @@ class Node {
         this.value = value;
     }
 }
+"""
+
+### Java 에서 Linked List 선언
+"""
+List<Integer> linked = new LinkedList<>();
 """
 
 ## 시간복잡도
@@ -77,6 +81,18 @@ if (cursor.hasPrevious()) {
 if (cursor.hasNext()) {
     cursor.next();
     cursor.remove();
+}
+"""
+
+#### 2차원 배열 사용시 주의사항
+2차원 배열을 CopyOf 메서드로 1차원 배열 복사하듯 복사하게 되면 얕은 복사(shoallow copy)가 일어나서 원본값도 바뀌게 된다. 따라서 반복문을 사용해야 한다.
+
+"""
+List<List<Integer>> doubleList = new ArrayList<>(); // 초기화
+
+List<List<Integer>> copyList = newArrayList<>();
+for(List<Integer> row : doubleList) {
+    copyList.add(new ArrayList<>(row))
 }
 """
 
