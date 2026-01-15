@@ -19,7 +19,6 @@ class Combination {
             return;
         }
 
-        // start부터 n까지 탐색
         for (int i = start; i <= n; i++) {
             path.add(i);
             backtrack(i + 1, n, k, path, result);
@@ -27,6 +26,7 @@ class Combination {
         }
     }
 
+    // ----------------------------------------
     public static void main(String[] args) {
         Combination solution = new Combination();
         List<List<Integer>> result = solution.combine(4, 2);

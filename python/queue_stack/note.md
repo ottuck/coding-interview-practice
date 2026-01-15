@@ -8,3 +8,6 @@ LinkedList 로 구현한다. -> 추가 설명: array list 를 쓸 경우 push, p
 # Stack
 1. 주요 특징은 LIFO(last in first out)
 2. array list 로 구현하기 떄문에 Python 에서는 단순히 배열선언만 하면 쓸 수 있다. ex) stack = []
+3. 주요 문제 유형: 
+* 괄호 짝 맞추기(Pair Matching) : Valid Parentheses, Longest Valid Parentheses
+* 단조 스택(Monotonic Stack) : Daily Temperature, Next Greater Element, 주식 가격

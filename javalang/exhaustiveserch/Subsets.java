@@ -4,6 +4,8 @@ package javalang.exhaustiveserch;
 import java.util.ArrayList;
 import java.util.List;
 
+// subset 에서는 모든 경우의 수가 필요하니까 모든 path 를 결과에 저장
+// 따라서 정답판별용 base case 는 없다고 볼수 있다. 단순하게 조합 코드에서 basecase 를 제거하고 모든 조합을 모아서 return 해준다.
 public class Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -12,8 +14,6 @@ public class Subsets {
     }
 
     private void backtrack(int start, int[] nums, List<Integer> path, List<List<Integer>> result) {
-        // subset 에서는 모든 경우의 수가 필요하니까 모든 path 를 결과에 저장
-        // 따라서 정답판별용 base case 는 없다고 볼수 있다(이렇게 정의하는게 맞나?)
         result.add(new ArrayList<>(path));
 
         for (int i = start; i < nums.length; i++) {
@@ -23,6 +23,7 @@ public class Subsets {
         }
     }
 
+    // ----------------------------------------
     public static void main(String[] args) {
         Subsets subsets = new Subsets();
 

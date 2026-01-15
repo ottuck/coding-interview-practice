@@ -12,7 +12,6 @@ public class TwoSumBacktracking {
      public static int[] solution(int[] input, int target) {
         nums = input;
         backtracking(0);
-
         return new int[]{picked.get(0), picked.get(1)};
     }
 
@@ -22,16 +21,15 @@ public class TwoSumBacktracking {
             int sum = nums[picked.get(0)] + nums[picked.get(1)];
             return sum == target;
         }
-
         for (int i = start; i < nums.length; i++) {
             picked.add(i);
             if (backtracking(i + 1)) return true;
             picked.remove(picked.size() - 1); // backtrack
         }
-
         return false;
     }
 
+    // ----------------------------------------
     public static void main(String[] args) {
         int[] res = solution(new int[]{2, 7, 11, 15}, 9);
         System.out.println(res[0] + ", " + res[1]); // 0, 1

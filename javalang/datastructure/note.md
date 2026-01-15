@@ -30,7 +30,7 @@ a.remove(Integer.valueOf(10));  // O(N)
 """
 class Node {
     int value;
-    Node next; 
+    Node next;
     Node prev; // 다음 노드와 이전 노드 주소를 가지고 있다(양방향 리스트)
     public Node(int value){
         this.value = value;
@@ -117,13 +117,18 @@ while (!queue.isEmpty()) {
 System.out.println(queue.popll()); // null 반환
 """
 
-* offer = inqueue
+## 제공하는 인터페이스
+코테에서는 offer, poll 을 더 자주 쓴다(null 값 활용)
+* offer = add
+* poll = remove
 * peek 은 큐에서 값을 빼는게 아니라 해당 값만 보여준다
-* poll = dequeue
+
 
 
 # Stack
 정의: LIFO(후입선출) 원칙을 따르는 자료구조. java에서는 ArrayDeque 을 사용해 구현한다.
+팁: LinkedList 를 사용할 수도 있지만 ArrayDeque 가 더 빠르기 때문에 ArrayDeque을 사용한다.
+주요 문제: 주식가격, 오늘날씨 (되돌리기가 필요할때 사용하면 좋다)
 
 ”””
 import java.util.ArrayDeque;
@@ -203,4 +208,3 @@ tagSet.remove("Python");  // O(1)
 
 int tagSize = tagSet.size();  // O(1) size도 저장중
 """
-

@@ -51,7 +51,7 @@ public class WordSearch {
         return false;
     }
 
-    // main (로컬 실행용)
+    // ----------------------------------------
     public static void main(String[] args) {
         WordSearch solution = new WordSearch();
 

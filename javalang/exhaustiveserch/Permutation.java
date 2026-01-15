@@ -13,17 +13,16 @@ public class Permutation {
     }
 
     private void backtrack(
-        List<Integer> path, // 여기에 완성시켜가는 순열을 차례대로 저장하게 된다
+        List<Integer> path, // 완성시켜가는 순열을 차례대로 저장하는 역할(== cur)
         boolean[] used, // 한번 선택한 숫자를 이미 path에 썼는지 기록하는 역할
-        int[] nums, 
+        int[] nums,
         List<List<Integer>> result
     ) {
         // base case: nums 길이의 순열 완성할 때
         if (path.size() == nums.length) {
-            result.add(new ArrayList<>(path)); // 복사해서 저장
+            result.add(new ArrayList<>(path)); // 반환 전 복사
             return;
         }
-
         for (int i = 0; i < nums.length; i++) {
             if (used[i]) continue;
 
@@ -31,11 +30,11 @@ public class Permutation {
             path.add(nums[i]);
             backtrack(path, used, nums, result);
             path.remove(path.size() - 1);
-
             used[i] = false;
         }
     }
 
+    // ----------------------------------------
     public static void main(String[] args) {
         Permutation permutation = new Permutation();
 

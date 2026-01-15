@@ -26,6 +26,7 @@ public class TwoSumHashMap {
         return new int[]{};
     }
 
+    // ----------------------------------------
     public static void main(String[] args) {
         int[] result = solution(new int[]{2, 7, 11, 15}, 9);
         System.out.println(Arrays.toString(result)); // [0, 1]
