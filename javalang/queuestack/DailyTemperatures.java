@@ -30,6 +30,5 @@ public class DailyTemperatures {
         int[] result = solution.dailyTemperatures(temperatures);
 
         System.out.println(Arrays.toString(result));
-        // 기대 출력: [1, 1, 4, 2, 1, 1, 0, 0]
     }
 }
