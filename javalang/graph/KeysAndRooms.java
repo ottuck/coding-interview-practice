@@ -3,7 +3,6 @@ package javalang.graph;
 
 import java.util.*;
 
-
 public class KeysAndRooms {
     // BFS
     public boolean bfsSolution(List<List<Integer>> rooms) {
@@ -24,7 +23,7 @@ public class KeysAndRooms {
             }
         }
 
-        // 정말 모든 vertex 를 방문했나 확인(false 가 있으면 방문 못한거)
+        // 정말 모든 vertex 를 방문했나 확인(false가 방문하지 못한 방)
         for (boolean v : visited) {
             if (!v) return false;
         }
