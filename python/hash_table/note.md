@@ -5,10 +5,10 @@
 # 추가1
 hash함수를 안거치고 키값을 그대로 인덱스로 갖는 테이블을 direct table 이라고 한다. 당연히 인덱스 값 문제가 생기기 때문에 아래와 같은 hash 함수를 거친다.
 
-'''
+```
 def toHash(key):
     return key % n
-'''
+```
 
 # 선언 예제
 1. score = {'math': 95, 'english': 80}

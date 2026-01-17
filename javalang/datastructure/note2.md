@@ -16,36 +16,36 @@
 start: 다음 탐색을 시작할 배열의 인덱스
 seleted: 현재까지 선택된 숫자들의 목록
 
-''' 
+```
 dfs(int[] nums, int target, int start, List<Integer> seleted) 
-'''
+```
 
 ### 상태 전이 
 전이 할때는 다음에 사용할때를 대비해서 원상복귀 시켜야한다.
 
-'''
+```
 selected.add(num[i])
 dfs(nums, target, m, i + 1, seleted)
 selected.remove(seleted.size() - 1) // 원복
-'''
+```
 
 ### 초기 상태
 dfs 를 호출하는곳에서 넣어주는 초기 상태. 여기서는 0, new ArrayList<>()
 
-'''
+```
 boolean solution(int[] nums, int target, int m) {
     return dfs(nums, target, m, 0, new ArrayList<>());
 }
-'''
+```
 
 ### 최종상태
 재귀함수에서는 주로 base case
 
-'''
+```
 if (selected.size == m) {
     return sum == target;
 }
-'''
+```
 
 # 코드 작성 팁
 (자바 강의 상태공간트리 영상 다시보기)
@@ -58,7 +58,7 @@ if (selected.size == m) {
 ## 예제
 m개의 요소의 합이 target 이 되면 true 반환하기
 
-'''
+```
 public class MSum {
 
     // 초기 상태
@@ -84,4 +84,4 @@ public class MSum {
         return false;
     }
 }
-'''
+```

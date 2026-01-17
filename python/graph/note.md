@@ -20,7 +20,7 @@
     -> 눈으로 보이는 데이터 형태 자체를 복수의 리스트(matrix형태)로 표현한다, 활용하기 좋다보니 제일 자주 사용된다.
 
 ### 간선리스트 -> 인접리스트 변환 코드
-'''
+```
 public class BuildAdjList {
 
     // edges: 각 원소 [a, b] 는 a -> b 단방향 간선
@@ -67,9 +67,9 @@ public class BuildAdjList {
         printGraph(graph);
     }
 }
-'''
+```
 
-'''
+```
 // 간선리스트 -> HashMap 전환 방식
 Map<Integer, List<Integer>> graph = new HashMap<>();
 for (int i = 0; i < n; i++) {
@@ -81,7 +81,7 @@ for (int[] e : edges) {
 
 // 탐색할때
 for (int next : graph.get(cur)) { ... }
-'''
+```
 
 ## DFS, BFS 주요 문제
 

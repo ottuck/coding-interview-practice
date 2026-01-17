@@ -27,7 +27,7 @@
 
 * 아래 경우 자연스럽게 heap 형태의 자료구조에 저장된다(array 형태의 완전이진트리)
 
-'''
+```
 import heapq
 
 #### min heqp
@@ -54,7 +54,7 @@ max_heap = [5,3,9,1]
 max_heap = [(-1 * i, i) for i in max_heqp]
 heapq.heapify(max_heap)
 weight, value = heqpq.heqppop(max_heqp)
-'''
+```
 
 # 다익스트라
 정의: 가중치 그래프에서 시작점과 도착점이 있을때, 최단 경로(shortest path)를 reutrn 하는 알고리즘

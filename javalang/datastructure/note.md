@@ -9,7 +9,7 @@ remove(idx || value)
 * size 도 기본으로 가지고 있다
 
 ## 시간 복잡도
-'''
+```
 ArrayList<Integer> a = new ArrayList<>(List.of(1,2,3));
 
 a.get(0);    // O(1)
@@ -22,12 +22,12 @@ a.add(1, 10);   // O(N) : 중간에 삽입하거나 지울때는 나머지 값�
 a.remove(2);    // O(N)
 a.contains(4);  // O(N)
 a.remove(Integer.valueOf(10));  // O(N)
-'''
+```
 
 # Linked List
 정의: Node가 Pointer(참조)를 통해 연결되ㅇ, 논리적인 순서로 형성된 자료구조
 
-'''
+```
 class Node {
     int value;
     Node next;
@@ -36,15 +36,15 @@ class Node {
         this.value = value;
     }
 }
-'''
+```
 
 ### Java 에서 Linked List 선언
-'''
+```
 List<Integer> linked = new LinkedList<>();
-'''
+```
 
 ## 시간복잡도
-'''
+```
 import java.util.LinkedList;
 
 LinkedList<String> list = new LinkedList<>();
@@ -82,26 +82,26 @@ if (cursor.hasNext()) {
     cursor.next();
     cursor.remove();
 }
-'''
+```
 
 #### 2차원 배열 사용시 주의사항
 2차원 배열을 CopyOf 메서드로 1차원 배열 복사하듯 복사하게 되면 얕은 복사(shoallow copy)가 일어나서 원본값도 바뀌게 된다. 따라서 반복문을 사용해야 한다.
 
-'''
+```
 List<List<Integer>> doubleList = new ArrayList<>(); // 초기화
 
 List<List<Integer>> copyList = newArrayList<>();
 for(List<Integer> row : doubleList) {
     copyList.add(new ArrayList<>(row))
 }
-'''
+```
 
 
 # Queue
 정의: FIFO(선입선출) 원칙을 따르는 자료구조
 -> Java 에서는 **ArrayDeque**(Array를 활용해서 만든 원형큐)를 사용한다.
 
-'''
+```
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -115,7 +115,7 @@ while (!queue.isEmpty()) {
     int item = queue.poll();
 }
 System.out.println(queue.popll()); // null 반환
-'''
+```
 
 ## 제공하는 인터페이스
 코테에서는 offer, poll 을 더 자주 쓴다(null 값 활용)
@@ -129,7 +129,7 @@ System.out.println(queue.popll()); // null 반환
 팁: LinkedList 를 사용할 수도 있지만 ArrayDeque 가 더 빠르기 때문에 ArrayDeque을 사용한다.
 주요 문제: 주식가격, 오늘날씨 (되돌리기가 필요할때 사용하면 좋다)
 
-'''
+```
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -141,8 +141,7 @@ stack.push(20);
 int top = stack.peek();
 while (!stack.isEmpty()) {
     int item = stack.poll();
-'''
-"""
+```
 
 
 # Hash table
@@ -150,7 +149,7 @@ while (!stack.isEmpty()) {
 
 * hash collision 은 면접용 개념만 알아두기
 
-'''
+```
 import java.util.HashMap;
 import java.util.Map;
 
@@ -165,11 +164,10 @@ userMap.put("mari", "학생3")
 String adminName = userMap.get("mike")
 
 // 키 존재 여부 확인: O(1) : 해시함수로 바로 알 수 있다
-if(userMap.containsKey("mike"))
-'''
+```
 
 ## Hash 순회
-'''
+```
 // 방법 1: entrySet() (Key, Value 모두 필요할 때)
 for(Map.Entry<String, String> entry : userMap.entrySet()) {
     String key = entry.getKey();
@@ -183,12 +181,12 @@ for(String key : userMap.keySet()) {
 
 // 방법 3: forEach() (람다식)
 userMap.forEach((key, value) -> {});
-'''
+```
 
 # HashSet
 정의: 중복된 요소를 허용하지 않는 '집합(Set)'을 구현한 자료구조. 내부적으로 HashMap을 활용한다.
 
-""'''
+```
 import java.util.HashSet;
 import java.util.Set;
 
@@ -206,4 +204,4 @@ if(target.contains("Java")){}  // O(1)
 tagSet.remove("Python");  // O(1)
 
 int tagSize = tagSet.size();  // O(1) size도 저장중
-'''
+```
