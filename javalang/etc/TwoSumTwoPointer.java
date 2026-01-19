@@ -1,4 +1,4 @@
-package javalang;
+package javalang.etc;
 
 // 시간 복잡도는 O(n), 정렬이 안되어 있다면 시간복잡도가 O(nlogn)이 된다
 public class TwoSumTwoPointer {

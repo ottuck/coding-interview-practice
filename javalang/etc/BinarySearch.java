@@ -1,4 +1,4 @@
-package javalang;
+package javalang.etc;
 
 // 절반씩 나눠계산하는 선형탐색의 한종류(완전탐색은 아니다)
 // '정렬'을 해야한다는 전제 조건이 있다
