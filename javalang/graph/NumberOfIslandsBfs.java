@@ -12,6 +12,7 @@ public class NumberOfIslandsBfs {
     int[] dc = {0, 0, -1, 1};
 
     public int numIslands(char[][] grid) {
+        this.grid = grid;
         m = grid.length; // rows
         n = grid[0].length; //cols
         visited = new boolean[m][n];
@@ -49,6 +50,5 @@ public class NumberOfIslandsBfs {
                 }
             }
          }
-
     }
 }

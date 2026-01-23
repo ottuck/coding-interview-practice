@@ -9,6 +9,7 @@ class NumberOfIslandsDfs {
     static final int[] dc = {0, 0, 1, -1};
 
     public int numIslands(char[][] grid) {
+        this.grid = grid;
         m = grid.length;
         n = grid[0].length;
         visited = new boolean[m][n];
@@ -32,7 +33,7 @@ class NumberOfIslandsDfs {
             int nr = r + dr[i];
             int nc = c + dc[i];
 
-            if (nr < 0 || nr <= m || nc < 0 || nc >= n) continue;
+            if (nr < 0 || nr >= m || nc < 0 || nc >= n) continue;
             if (grid[nr][nc] == '1' && !visited[nr][nc]) {
                 dfs(nr, nc);
             }
@@ -40,4 +41,5 @@ class NumberOfIslandsDfs {
     }
 }
 
-// Java 에서 DFS 는 고려해봐야한다. 왠만하면 BFS 로 구현하자.
+// Java에서 DFS는 StackcOverFlow가 날수 있기 때문에 고려해 봐야한다. 
+// 실행속도는 BFS 와 비슷하다.
