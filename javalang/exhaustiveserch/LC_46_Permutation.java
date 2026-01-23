@@ -4,7 +4,7 @@ package javalang.exhaustiveserch;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Permutation {
+public class LC_46_Permutation {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         boolean[] used = new boolean[nums.length];
@@ -36,7 +36,7 @@ public class Permutation {
 
     // ----------------------------------------
     public static void main(String[] args) {
-        Permutation permutation = new Permutation();
+        LC_46_Permutation permutation = new LC_46_Permutation();
 
         int[] nums = {1, 2, 3};
         List<List<Integer>> result = permutation.permute((nums));

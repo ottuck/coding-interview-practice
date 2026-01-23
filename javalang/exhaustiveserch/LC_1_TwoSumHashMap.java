@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Arrays;
 
-public class TwoSumHashMap {
+public class LC_1_TwoSumHashMap {
 
     public static int[] solution(int[] nums, int target) {
         Map<Integer, Integer> indexByValue = new HashMap<>();

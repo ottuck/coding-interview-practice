@@ -9,7 +9,7 @@ package javalang.etc;
 
 import java.util.*;
 
-public class CoinChange {
+public class LC_322_CoinChange {
     public int coinChange(int[] coins, int amount) {
         if (amount == 0) return 0;
 

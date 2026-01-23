@@ -4,7 +4,7 @@ package javalang.graph;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class NumberOfIslandsBfs {
+public class LC_200_NumberOfIslandsBfs {
     char[][] grid;
     int m, n;
     boolean[][] visited;

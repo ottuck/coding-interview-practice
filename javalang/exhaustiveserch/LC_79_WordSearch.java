@@ -1,7 +1,7 @@
 // LeetCode 79 WordSearch
 package javalang.exhaustiveserch;
 
-public class WordSearch {
+public class LC_79_WordSearch {
 
     private int n; // row
     private int m; // coloms
@@ -53,7 +53,7 @@ public class WordSearch {
 
     // ----------------------------------------
     public static void main(String[] args) {
-        WordSearch solution = new WordSearch();
+        LC_79_WordSearch solution = new LC_79_WordSearch();
 
         char[][] board = {
                 {'A','B','C','E'},

@@ -1,7 +1,7 @@
 // LeetCode 200. Number of Islands
 package javalang.graph;
 
-class NumberOfIslandsDfs {
+class LC_200_NumberOfIslandsDfs {
     int m, n;
     boolean[][] visited;
     char[][] grid;

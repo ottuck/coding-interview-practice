@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
-public class DailyTemperatures {
+public class LC_739_DailyTemperatures {
     public int[] dailyTemperatures(int[] temp) {
         int n = temp.length;
         int[] answer = new int[n];
@@ -24,7 +24,7 @@ public class DailyTemperatures {
 
     // ---------------------------------------
     public static void main(String[] args) {
-        DailyTemperatures solution = new DailyTemperatures();
+        LC_739_DailyTemperatures solution = new LC_739_DailyTemperatures();
 
         int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
         int[] result = solution.dailyTemperatures(temperatures);

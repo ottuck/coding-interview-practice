@@ -1,6 +1,5 @@
 package javalang.exhaustiveserch;
 
-
 import java.util.Arrays;
 
 public class MSumDfs {

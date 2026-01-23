@@ -3,7 +3,7 @@ package javalang.graph;
 
 import java.util.*;
 
-public class KeysAndRooms {
+public class LC_841_KeysAndRooms {
     // BFS
     public boolean bfsSolution(List<List<Integer>> rooms) {
         int n = rooms.size();

@@ -6,7 +6,7 @@ package javalang.graph;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class ShortestPath {
+public class LC_1091_ShortestPath {
     public int shortestPathBinaryMatrix(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;

@@ -4,7 +4,7 @@ package javalang.exhaustiveserch;
 import java.util.ArrayList;
 import java.util.List;
 
-class Combination {
+class LC_77_Combination {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(1, n, k, new ArrayList<>(), result);
@@ -28,7 +28,7 @@ class Combination {
 
     // ----------------------------------------
     public static void main(String[] args) {
-        Combination solution = new Combination();
+        LC_77_Combination solution = new LC_77_Combination();
         List<List<Integer>> result = solution.combine(4, 2);
 
         System.out.println(result);

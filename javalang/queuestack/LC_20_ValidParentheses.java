@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidParentheses {
+public class LC_20_ValidParentheses {
 
     public static boolean isValid(String s) {
         Map<Character, Character> map = new HashMap<>();
