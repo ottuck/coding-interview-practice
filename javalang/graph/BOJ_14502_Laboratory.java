@@ -4,100 +4,99 @@
 // 접근: 모든 방식으로 벽을 3개 세운다(조합) -> 그 과정마다 바이러스가 퍼트리며 0의 개수를 샌다(BFS) -> 남아있는 0의 개수를 샌다
 package javalang.graph;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class BOJ_14502_Laboratory {
     static int N, M;
-    static int[][] board;
+    static int[][] lab;
 
-    static final List<int[]> empties = new ArrayList<>();
-    static final List<int[]> viruses = new ArrayList<>();
+    static ArrayList<int[]> empties = new ArrayList<>();
+    static ArrayList<int[]> viruses = new ArrayList<>();
 
-    // 4방향 (상하좌우)
-    static final int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    static int[] dr = {-1, 1, 0, 0};
+    static int[] dc = {0, 0, -1, 1};
+
     static int answer = 0;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        board = new int[N][M];
+        lab = new int[N][M];
 
-        // 입력 및 빈 칸, 바이러스 위치 저장
         for (int r = 0; r < N; r++) {
             st = new StringTokenizer(br.readLine());
             for (int c = 0; c < M; c++) {
-                board[r][c] = Integer.parseInt(st.nextToken());
-                if (board[r][c] == 0) empties.add(new int[]{r, c});
-                else if (board[r][c] == 2) viruses.add(new int[]{r, c});
+                lab[r][c] = Integer.parseInt(st.nextToken());
+                if (lab[r][c] == 0) empties.add(new int[]{r, c});
+                else if (lab[r][c] == 2) viruses.add(new int[]{r, c});
             }
         }
 
-        // 빈 칸 중 3개 선택 (조합)
-        selectWalls(0, 0, new int[3][2]);
+        chooseWalls(0, 0, new ArrayList<>());
         System.out.println(answer);
     }
 
-    // 조합으로 벽 3개 선택
-    static void selectWalls(int start, int count, int[][] walls) {
-        if (count == 3) {
+    // 빈 칸 중 3개 선택 (조합)
+    static void chooseWalls(int start, int chosen, ArrayList<int[]> walls) {
+        if (chosen == 3) {
             // 벽 설치
-            for (int[] w : walls) board[w[0]][w[1]] = 1;
+            for (int[] w : walls) 
+                lab[w[0]][w[1]] = 1;
 
-            // 바이러스 확산 후 안전 영역 계산
+            // 바이러스 확산
             answer = Math.max(answer, bfs());
 
-            // 벽 원상복구
-            for (int[] w : walls) board[w[0]][w[1]] = 0;
+            // 벽 원복
+            for (int[] w : walls) 
+                lab[w[0]][w[1]] = 0;
 
             return;
         }
 
         for (int i = start; i < empties.size(); i++) {
-            int[] e = empties.get(i);
-            walls[count][0] = e[0];
-            walls[count][1] = e[1];
-
-            selectWalls(i + 1, count + 1, walls);
+            walls.add(empties.get(i));
+            chooseWalls(i + 1, chosen + 1, walls);
+            walls.remove(walls.size() - 1);
         }
     }
 
     static int bfs() {
-        // board 복사 (벽은 설치된 상태)
         int[][] tmp = new int[N][M];
-        for (int i = 0; i < N; i++) tmp[i] = board[i].clone();
+        for (int i = 0; i < N; i++) tmp[i] = lab[i].clone();
+
+        Queue<int[]> q = new ArrayDeque<>();
 
         // multi-source BFS: 모든 바이러스에서 시작
-        Queue<int[]> q = new ArrayDeque<>();
-        for (int[] v : viruses) q.offer(new int[]{v[0], v[1]});
+        for (int[] v : viruses) {
+            q.offer(new int[]{v[0], v[1]});
+        }
 
         while (!q.isEmpty()) {
             int[] cur = q.poll();
             int r = cur[0], c = cur[1];
 
-            for (int[] dir: directions) {
-                int nr = r + dir[0];
-                int nc = c + dir[1];
+            for (int d = 0; d < 4; d++) {
+                int nr = r + dr[d];
+                int nc = c + dc[d];
 
                 if (nr < 0 || nr >= N || nc < 0 || nc >= M) continue;
-                if (tmp[nr][nc] != 0) continue; // 빈칸(0)만 감염
+                if (tmp[nr][nc] != 0) continue;
 
                 tmp[nr][nc] = 2;
                 q.offer(new int[]{nr, nc});
             }
         }
 
-        // 안전 영역(0) 카운트
+        // 안전 영역 계산
         int safe = 0;
-        for (int[] row : tmp) {
-            for (int cell : row) {
-                if (cell == 0) safe++;
+        for (int r = 0; r < N; r++) {
+            for (int c = 0; c < M; c++) {
+                if (tmp[r][c] == 0) safe++;
             }
         }
         return safe;
